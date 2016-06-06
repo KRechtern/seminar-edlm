@@ -15,9 +15,6 @@ Template.home.helpers({
 
   tempo: function() {
     var users = Meteor.users.find();
-    if (!users) {
-      return [];
-    }
     var tempo = 5;
     var user;
     while (users.hasNext()) {
