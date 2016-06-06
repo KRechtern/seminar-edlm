@@ -3,6 +3,9 @@ accounts-password@1.1.8
 accounts-ui@1.1.9
 accounts-ui-unstyled@1.1.12
 alanning:roles@1.2.15
+aldeed:autoform@4.2.2
+aldeed:simple-schema@1.1.0
+aldeed:template-extension@3.4.3
 allow-deny@1.0.4
 autoupdate@1.2.9
 babel-compiler@6.6.4
@@ -27,6 +30,7 @@ diff-sequence@1.0.5
 ecmascript@0.4.3
 ecmascript-runtime@0.2.10
 ejson@1.0.11
+elevatedevdesign:autoform-nouislider@0.1.1
 email@1.0.12
 es5-shim@4.5.10
 fastclick@1.0.11
@@ -61,6 +65,7 @@ mobile-experience@1.0.4
 mobile-status-bar@1.0.12
 modules@0.6.1
 modules-runtime@0.6.3
+momentjs:moment@2.8.4
 mongo@1.1.7
 mongo-id@1.0.4
 npm-bcrypt@0.8.5
@@ -70,6 +75,7 @@ ordered-dict@1.0.7
 promise@0.6.7
 random@1.0.9
 rate-limit@1.0.4
+rcy:nouislider@7.0.7_2
 reactive-dict@1.1.7
 reactive-var@1.0.9
 reload@1.1.8
