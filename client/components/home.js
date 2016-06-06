@@ -1,5 +1,6 @@
 Template.home.onCreated(function homeOnCreated() {
   Meteor.subscribe('questions');
+  Meteor.subscribe('userdata');
 });
 
 Template.home.helpers({
@@ -10,6 +11,22 @@ Template.home.helpers({
 
   users: function() {
     return Meteor.users.find();
+  },
+
+  tempo: function() {
+    var users = Meteor.users.find();
+    if (!users) {
+      return [];
+    }
+    var tempo = 5;
+    var user;
+    while (users.hasNext()) {
+      user = users.next();
+      //alert(user.slider[0]);
+      //tempo = tempo + user.slider[0].tempo;
+    }
+
+    return tempo;
   }
 });
 

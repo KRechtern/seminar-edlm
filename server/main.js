@@ -17,6 +17,10 @@ Meteor.publish(null, function() {
   return Meteor.users.find(this.userId, {fields: {slider: 1}});
 });
 
+Meteor.publish("userdata", function() {
+  return Meteor.users.find();
+})
+
 Meteor.users.allow({
   update: function(userId, user, fields, modifier) {
     if (user._id === userId)
