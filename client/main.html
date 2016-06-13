@@ -4,5 +4,12 @@
 </head>
 
 <body>
-  
+  {{> home}}
+  {{#if isInRole 'admin'}}
+  {{> reactiveChart chart_id="liveChart"}}
+  {{/if}}
 </body>
+
+<template name="reactiveChart">
+  <div id="{{chart_id}}"></div>
+</template>

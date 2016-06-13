@@ -1,18 +1,40 @@
 <template name="home">
   <h1>Willkommen bei Feedbacker</h1>
   {{> loginButtons}}
-  <a href="/topics"><button>Themen erstellen</button></a>
+  <br>
   {{#if isInRole 'normal'}}
-  {{currentUser.slider.[0].tempo}}
-  <input id="tempoSlider" type="range" min=-5 max=5 step=1 value={{currentUser.slider.[0].tempo}}>
-  <div>
-    {{ #each questions }}
-      {{ > question }}
-    {{ /each }}
+  <div id="slider">
+    <div id="slider_tempo">
+      <div class="labelMiddle">
+        <span class="labelLeft">Zu langsam</span>
+        <span class="labelMiddle">Tempo</span>
+        <span class="labelRight">Zu schnell</span>
+      </div>
+      <input id="tempoSlider" type="range" min=-50 max=50 step=1 value={{currentUser.slider.[0].tempo}}>
+    </div>
+    <div id="slider_interest">
+      <div class="labelMiddle">
+        <span class="labelLeft">Uninteressant</span>
+        <span class="labelMiddle">Interesse</span>
+        <span class="labelRight">Ziemlich interessant</span>
+      </div>
+      <input id="interestSlider" type="range" min=-50 max=50 step=1 value={{currentUser.slider.[1].interest}}>
+    </div>
+    <div id="slider_lost">
+      <div class="labelMiddle">
+        <span class="labelLeft">Ich versteh gar nichts!</span>
+        <span class="labelMiddle">Verständis</span>
+        <span class="labelRight">Viel zu einfach</span>
+      </div>
+      <input id="lostSlider" type="range" min=-50 max=50 step=1 value={{currentUser.slider.[2].lost}}>
+    </div>
   </div>
   {{/if}}
 
   {{#if isInRole 'admin'}}
-  Tempo: {{tempo}}
+    Tempo: {{tempo}}<br>
+    Interesse: {{interest}}<br>
+    Verständnis: {{lost}}
+    <button id="reset">Werte zurücksetzen</button>
   {{/if}}
 </template>
