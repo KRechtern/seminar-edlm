@@ -5,15 +5,15 @@
   {{#if isInRole 'normal'}}
   <div id="slider">
     <div id="slider_tempo">
-      <div class="labelMiddle">
+      <div class="labelDiv">
         <span class="labelLeft">Zu langsam</span>
         <span class="labelMiddle">Tempo</span>
         <span class="labelRight">Zu schnell</span>
       </div>
-      <input id="tempoSlider" type="range" min=-50 max=50 step=1 value={{currentUser.slider.[0].tempo}}>
+        <input id="tempoSlider" type="range" min=-50 max=50 step=1 value={{currentUser.slider.[0].tempo}}>
     </div>
     <div id="slider_interest">
-      <div class="labelMiddle">
+      <div class="labelDiv">
         <span class="labelLeft">Uninteressant</span>
         <span class="labelMiddle">Interesse</span>
         <span class="labelRight">Ziemlich interessant</span>
@@ -21,7 +21,7 @@
       <input id="interestSlider" type="range" min=-50 max=50 step=1 value={{currentUser.slider.[1].interest}}>
     </div>
     <div id="slider_lost">
-      <div class="labelMiddle">
+      <div class="labelDiv">
         <span class="labelLeft">Ich versteh gar nichts!</span>
         <span class="labelMiddle">Verständis</span>
         <span class="labelRight">Viel zu einfach</span>
@@ -35,6 +35,7 @@
     Tempo: {{tempo}}<br>
     Interesse: {{interest}}<br>
     Verständnis: {{lost}}
+    Zu schnell: {{tempoCounts.posTempo}}
     <button id="reset">Werte zurücksetzen</button>
   {{/if}}
 </template>

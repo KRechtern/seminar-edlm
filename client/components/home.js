@@ -79,6 +79,41 @@ Template.home.helpers({
       lost += parseInt(user.slider[2].lost, 10);
     });
     return lost;
+  },
+
+  tempoCounts: function() {
+    var count = {
+      negTempo: 0,
+      posTempo: 0,
+      posInterest: 0,
+      negInterest: 0,
+      posLost: 0,
+      negLost: 0
+    };
+    var users = Meteor.users.find();
+    if (!users) return 0;
+    users.forEach(function (user) {
+      var valueTempo = parseInt(user.slider[0].tempo, 10);
+      var valueInterest = parseInt(user.slider[1].interest, 10);
+      var valueLost = parseInt(user.slider[2].lost, 10);
+      if (valueTempo < 0) {
+        count.negTempo = count.negTempo + 1;
+      } else {
+        count.posTempo = count.posTempo + 1;
+      }
+      if (valueInterest < 0) {
+        count.negInterest = count.negInterest + 1;
+      } else {
+        count.posInterest = count.posInterest + 1;
+      }
+      if (valueLost < 0) {
+        count.negLost = count.negTempo + 1;
+      } else {
+        count.posLost = count.posLost + 1;
+      }
+    });
+
+    return count;
   }
 });
 

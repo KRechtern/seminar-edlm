@@ -88,12 +88,23 @@ input[type=range]:focus::-ms-fill-upper {
 
 .labelLeft {
   float: left;
+  width: 33.3%;
+  text-align: left;
+  margin-bottom: 10px;
 }
 
 .labelMiddle {
+  float:left;
+  width: 33.3%;
   text-align: center;
 }
 
+.labelDiv {
+  width: 100%;
+}
+
 .labelRight {
-  float: right;
+  float: left;
+  width: 33.3%;
+  text-align: right;
 }
